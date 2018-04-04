@@ -11,7 +11,7 @@ RUN dnf install -y openconnect vpnc-script git \
 		gdouros-symbola-fonts gnu-free-fonts-common \
 		gnu-free-mono-fonts gnu-free-sans-fonts gnu-free-serif-fonts \
 		monofett-fonts overpass-mono-fonts \
-		oxygen-fonts-common oxygen-mono-fonts pcaro-hermit-fonts 
+		oxygen-fonts-common oxygen-mono-fonts pcaro-hermit-fonts \
 	&& echo "Settingg up google chorme browser ..." \
 	&& curl -LO --silent https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm \
 	&& dnf localinstall -y google-chrome-stable_current_x86_64.rpm \
