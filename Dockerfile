@@ -1,7 +1,8 @@
 FROM fedora:latest
 MAINTAINER Sudarsha Hewa <sudarsha@gamil.com>
 
-RUN dnf install -y openconnect vpnc-script git \
+RUN dnf update -y \
+	&& dnf install -y openconnect vpnc-script git \
 		firefox curl dbus-x11 \
 		remmina-plugins-rdp \
 		mozilla-fira-mono-fonts mozilla-fira-sans-fonts \
@@ -12,7 +13,8 @@ RUN dnf install -y openconnect vpnc-script git \
 		gnu-free-mono-fonts gnu-free-sans-fonts gnu-free-serif-fonts \
 		monofett-fonts overpass-mono-fonts \
 		oxygen-fonts-common oxygen-mono-fonts pcaro-hermit-fonts \
-	&& echo "Settingg up google chorme browser ..." \
+	&& echo "Setting up google chorme browser ..." \
 	&& curl -LO --silent https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm \
 	&& dnf localinstall -y google-chrome-stable_current_x86_64.rpm \
-	&& rm -f google-chrome-stable_current_x86_64.rpm
+	&& rm -f google-chrome-stable_current_x86_64.rpm \
+	&& dnf clean all
